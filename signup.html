@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+
+
+		<script>
+          
+            // Function to check Whether both passwords
+            // is same or not.
+            function checkPassword(form) {
+                password1 = form.password1.value;
+                password2 = form.password2.value;
+  
+                // If password not entered
+                if (password1 == '')
+                    alert ("Please enter Password");
+                      
+                // If confirm password not entered
+                else if (password2 == '')
+                    alert ("Please enter confirm password");
+                      
+                // If Not same return False.    
+                else if (password1 != password2) {
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+  
+                // If same return True.
+                else{
+                    alert("Password Match: Welcome ---")
+                    return true;
+                }
+            }
+        </script>
+</head>
+<body>
+    <section>
+        <div class="form-box"> 
+            <div class="form-value">
+                <form onSubmit = "return checkPassword(this)" method="post" action="signup.php">
+                    <h2>Signup</h2>
+                    <div class="inputbox">
+                        
+                        <ion-icon name="text-outline"></ion-icon>
+                        <input name="name" type="Text" required placeholder="Name">
+                        
+                    </div>
+		    <div class="inputbox">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <input name="number" type="tel" required placeholder="Number">
+                        
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input name="pass" type="password" name = password1 size = 25 required placeholder="Password">
+                        
+                    </div>
+		     <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="Password" name = password2 size = 25 required placeholder="Repeat Password">
+                        
+                    </div>
+		<div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input name="hint" type="Text" name = hints size = 6 required placeholder="Hints">
+                        
+                    </div>
+                    <button name="Submit" >Sign up</button>
+                    <div class="register">
+                        <p>Already have an Account <a href="sample.html">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </section>
+</body>    
+
+
+
+<style> 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url(1.jpeg)no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.form-box{
+    position: relative;
+    width: 500px;
+    height: 575px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 0 10px rgba(0.3,0.3,0.3,0.9);
+}
+
+h2{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox{
+    position: relative;
+    margin: 10px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label{
+    position: absolute;
+    top: 55%;
+    left: 5px;
+    transform: translateY(-10%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s ;
+}
+
+
+    
+::placeholder{
+    color: #fff;
+}
+
+.inputbox input{
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 35px 0 5px;
+    color:#fff;
+}
+
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 45px;
+}
+
+.forget{
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+.forget label input{
+    margin-right: 3px;
+}
+
+
+.forget label a{
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+}   
+
+.forget label a:hover{
+    text-decoration: underline;
+}
+
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: 0.5s;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.5);
+}
+
+button:hover{
+    background-color: rgb(27, 0, 126);
+    color: #fff;
+}
+
+.register{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover{
+     text-decoration: underline;
+
+}
+</style>
+
+</html>
